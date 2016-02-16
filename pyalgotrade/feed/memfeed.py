@@ -73,5 +73,5 @@ class MemFeed(feed.BaseFeed):
                 self.registerDataSeries(key)
 
             self.__values.extend(values)
-            cmpFun = lambda x, y: cmp(x[0], y[0])
-            self.__values.sort(cmpFun)
+            cmpFun = lambda x: x[0]
+            self.__values.sort(key=cmpFun)
