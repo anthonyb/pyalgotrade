@@ -22,8 +22,7 @@ import abc
 
 from pyalgotrade import broker
 import pyalgotrade.bar
-import slippage
-
+from pyalgotrade.broker import slippage
 
 # Returns the trigger price for a Limit or StopLimit order, or None if the limit price was not yet penetrated.
 def get_limit_price_trigger(action, limitPrice, useAdjustedValues, bar):
