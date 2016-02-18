@@ -120,7 +120,7 @@ class Server(SimpleXMLRPCServer.SimpleXMLRPCServer):
         with self.__parametersLock:
             if self.__parametersIterator is not None:
                 try:
-                    for i in xrange(Server.defaultBatchSize):
+                    for i in range(Server.defaultBatchSize):
                         ret.append(self.__parametersIterator.next())
                 except StopIteration:
                     self.__parametersIterator = None
