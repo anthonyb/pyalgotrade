@@ -230,7 +230,7 @@ class LiveBroker(broker.Broker):
     def dispatch(self):
         # Switch orders from SUBMITTED to ACCEPTED.
         ordersToProcess = self.__activeOrders.values()
-        for order in ordersToProcess:
+        for order in list(ordersToProcess):
             if order.isSubmitted():
                 order.switchState(broker.Order.State.ACCEPTED)
                 self.notifyOrderEvent(broker.OrderEvent(order, broker.OrderEvent.Type.ACCEPTED, None))
